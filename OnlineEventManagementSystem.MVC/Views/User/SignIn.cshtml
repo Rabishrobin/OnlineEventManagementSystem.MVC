@@ -1,0 +1,38 @@
+﻿@model OnlineEventManagementSystem.Entity.UserManager
+
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/Index.cshtml";
+}
+
+<h2 style="text-align:center">SignIn</h2>
+
+@using (Html.BeginForm("SignIn", "User", FormMethod.Post))
+{
+    @Html.ValidationSummary(true);
+    <table cellpadding="10" align="center">
+        <tr>
+            <td>
+                @Html.Label("Email ID")
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.UserMailId)
+                @Html.ValidationMessageFor(model => model.UserMailId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.PasswordFor(model => model.UserPassword)
+                @Html.ValidationMessageFor(model => model.UserPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="LogIn" />
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,84 @@
+﻿@model OnlineEventManagementSystem.Entity.UserManager
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/Index.cshtml";
+}
+
+<h2 style="text-align:center">SignUp</h2>
+
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+{
+    @Html.ValidationSummary(true);
+    <table cellpadding="10" align="center">
+        <tr>
+            <td>
+                @Html.Label("First Name")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.UserFirstName)<br />
+                @Html.ValidationMessageFor(model => model.UserFirstName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Last Name")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.UserLastName)<br />
+                @Html.ValidationMessageFor(model => model.UserLastName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Mobile Number")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.UserMobileNumber)<br />
+                @Html.ValidationMessageFor(model => model.UserMobileNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Mail ID")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.UserMailId)<br />
+                @Html.ValidationMessageFor(model => model.UserMailId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.PasswordFor(Model => Model.UserPassword)<br />
+                @Html.ValidationMessageFor(model => model.UserPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Confirm Password")
+            </td>
+            <td>
+                @Html.PasswordFor(Model => Model.ReenteredPassword)<br />
+                @Html.ValidationMessageFor(model => model.ReenteredPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Gender")
+            </td>
+            <td>
+                @Html.RadioButtonFor(Model => Model.UserGender, "male")Male
+                @Html.RadioButtonFor(Model => Model.UserGender, "female")Female<br />
+                @Html.ValidationMessageFor(model => model.UserGender)
+            </td>
+        </tr>
+        <tr colspan="2">
+            <td>
+                <input type="Submit" value="Sign Up" />
+            </td>
+        </tr>
+    </table>
+}

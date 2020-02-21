@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <title>@ViewBag.Title</title>
+    <style>
+        header {
+            height: 50px;
+            width: 100%;
+            background-color:aqua;
+        }
+    </style>
+    <header style="text-align:center">
+        <h1>Online Event Management</h1>
+    </header>
+    <nav style="background-color:antiquewhite;">
+        @Html.ActionLink("Sign In", "SignIn")
+        @Html.ActionLink("Sign Up", "SignUp")
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer style="text-align:center;background-color:yellowgreen">
+        
+    </footer>
+
